@@ -30,3 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
       },
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiperCat = new Swiper('.swiper-advantages', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 4, // Показывать по одному слайду
+      spaceBetween: 20, // Отступ между слайдами
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.next-3',
+        prevEl: '.prev-3',
+      },
+    });
+  });
