@@ -116,49 +116,70 @@ document.addEventListener('DOMContentLoaded', function() {
         prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      1312: { 
-        slidesPerView: 6
-      },
-      1114: { 
-        slidesPerView: 5
-      },
-      801: { 
-        slidesPerView: 4
-      },
-      650: { 
-        slidesPerView: 3
-      },
-      0: { 
-        slidesPerView: 2
-      },
+        1312: { 
+            slidesPerView: 6
+        },
+        1114: { 
+            slidesPerView: 5
+        },
+        801: { 
+            slidesPerView: 4
+        },
+        650: { 
+            slidesPerView: 3
+        },
+        0: { 
+            slidesPerView: 2
+        },
     }
+ });
+
+
+ Fancybox.bind('[data-fancybox="gallery"]', {
+  Toolbar: {
+    display: {
+      left: [],
+      middle: [],
+      right: ["close"], // Оставляем только кнопку закрытия справа
+    },
+  },
+  Navigation: {
+    display: ["prev", "next"], // Отображаем только кнопки "предыдущий" и "следующий"
+  },
 });
 
 
 
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
-  const openBtns = document.querySelectorAll(".open-cart");  // Все кнопки
+  const openBtns = document.querySelectorAll(".open-cart");
   const popup = document.querySelector(".popup");
   const closeBtn = document.querySelector(".close-popup");
 
-  openBtns.forEach(button => {
-    button.addEventListener("click", function() {
-      popup.style.display = "flex";
+  // Проверяем, есть ли кнопки открытия
+  if (openBtns.length > 0 && popup) {
+    openBtns.forEach(button => {
+      button.addEventListener("click", function() {
+        popup.style.display = "flex";
+      });
     });
-  });
 
-  closeBtn.addEventListener("click", function() {
-    popup.style.display = "none";
-  });
-
-  // Закрытие при клике вне окна
-  popup.addEventListener("click", function(event) {
-    if (event.target === popup) {
-      popup.style.display = "none";
+    // Проверяем, есть ли кнопка закрытия
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function() {
+        popup.style.display = "none";
+      });
     }
-  });
+
+    // Закрытие при клике вне окна
+    popup.addEventListener("click", function(event) {
+      if (event.target === popup) {
+        popup.style.display = "none";
+      }
+    });
+  }
 });
 
 
@@ -237,54 +258,265 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const saleBlock = document.querySelector('.sale-block2');
-  const items = document.querySelectorAll('.sale-block-item-2, .sale-block-item-3, .sale-block-item-4');
-  const bulletsContainer = document.querySelector('.slider-bullets');
-  let currentSlide = 0;
+  function initSlider() {
+    const saleBlock = document.querySelector('.sale-block2');
+    const items = document.querySelectorAll('.sale-block-item-2, .sale-block-item-3, .sale-block-item-4');
+    const bulletsContainer = document.querySelector('.slider-bullets');
+    let currentSlide = 0;
 
-  if (!saleBlock || !items.length || !bulletsContainer) {
-    console.warn("Не найдены элементы для слайдера.");
-    return;
-  }
-
-  const bullets = document.querySelectorAll('.slider-bullets .bullet');
-
-  function showSlide(slideIndex) {
-    if (slideIndex < 0) {
-      slideIndex = items.length - 1;
-    } else if (slideIndex >= items.length) {
-      slideIndex = 0;
+    if (!saleBlock || !items.length || !bulletsContainer) {
+      console.warn("Не найдены элементы для слайдера.");
+      return;
     }
 
-    currentSlide = slideIndex;
+    const bullets = document.querySelectorAll('.slider-bullets .bullet');
 
-    // Убираем класс 'active' у всех буллетов
-    bullets.forEach(bullet => bullet.classList.remove('active'));
+    function showSlide(slideIndex) {
+      if (slideIndex < 0) {
+        slideIndex = items.length - 1;
+      } else if (slideIndex >= items.length) {
+        slideIndex = 0;
+      }
 
-    // Добавляем класс 'active' текущему буллету
-    bullets[slideIndex].classList.add('active');
+      currentSlide = slideIndex;
 
-    // Вычисляем ширину слайда
-    const slideWidth = items[0].offsetWidth; // Получаем ширину ПЕРВОГО слайда
-    console.log("Slide width:", slideWidth); // Для отладки
+      // Убираем класс 'active' у всех буллетов
+      bullets.forEach(bullet => bullet.classList.remove('active'));
 
-    items.forEach(item => {
-      item.style.transform = `translateX(${Math.floor(-slideIndex * slideWidth)}px)`;
+      // Добавляем класс 'active' текущему буллету
+      bullets[slideIndex].classList.add('active');
+
+      // Вычисляем ширину слайда
+      const slideWidth = items[0].offsetWidth;
+      console.log("Slide width:", slideWidth);
+
+      items.forEach(item => {
+        item.style.transform = `translateX(${Math.floor(-slideIndex * slideWidth)}px)`;
+      });
+    }
+
+    // Обработчики кликов на буллеты
+    bullets.forEach((bullet, index) => {
+      bullet.addEventListener('click', function() {
+        showSlide(index);
+      });
     });
+
+    // Автоматическая прокрутка (опционально)
+    const autoSlide = setInterval(() => {
+      showSlide(currentSlide + 1);
+    }, 5000);
+
+    // Очищаем интервал, если ширина экрана изменилась
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 1218) {
+        clearInterval(autoSlide);
+      }
+    });
+
+    // Инициализация слайдера
+    showSlide(0);
   }
 
-  // Обработчики кликов на буллеты
-  bullets.forEach((bullet, index) => {
-    bullet.addEventListener('click', function() {
-      showSlide(index);
-    });
+  function checkScreenSize() {
+    if (window.innerWidth <= 1218) {
+      initSlider();
+    }
+  }
+
+  checkScreenSize();
+  window.addEventListener('resize', checkScreenSize);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const swiperCat = new Swiper('.swiper-single-rev', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 6,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination2',
+      clickable: true,
+    },
+    breakpoints: {
+      1000: { 
+        slidesPerView: 6,
+        spaceBetween: 20
+      },
+      900: { 
+        slidesPerView: 5
+      },
+      650: { 
+        slidesPerView: 4
+      },
+      500: { 
+        slidesPerView: 3
+      },
+      0: { 
+        slidesPerView: 2
+      },
+    }
+  });
+});
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  let swiperCat;
+
+  function initSwiper() {
+    if (window.innerWidth < 800) {
+      if (!swiperCat) {
+        swiperCat = new Swiper('.swiper-single-cont', {
+          loop: true,
+          spaceBetween: 20,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          slidesPerView: 1,
+          breakpoints: {
+            800: {
+              direction: 'vertical',
+              slidesPerView: 6,
+            },
+            0: {
+              direction: 'horizontal',
+              slidesPerView: 1,
+            },
+          },
+        });
+      }
+    } else {
+      if (swiperCat) {
+        swiperCat.destroy(true, true);
+        swiperCat = null;
+      }
+    }
+  }
+
+  initSwiper();
+  window.addEventListener('resize', initSwiper);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popupRev = document.getElementById("popup-rev");
+  const openPopupRev = document.querySelector(".single-rev-open-popup");
+  const closePopupRev = document.querySelector(".popup-close-rev");
+
+  openPopupRev.addEventListener("click", function () {
+      popupRev.style.display = "flex";
   });
 
-  // Автоматическая прокрутка (опционально)
-  setInterval(() => {
-    showSlide(currentSlide + 1);
-  }, 5000000000000);
+  closePopupRev.addEventListener("click", function () {
+      popupRev.style.display = "none";
+  });
 
-  // Инициализация слайдера
-  showSlide(0);
+  // Закрытие попапа при клике вне контента
+  popupRev.addEventListener("click", function (event) {
+      if (event.target === popupRev) {
+          popupRev.style.display = "none";
+      }
+  });
 });
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popups = document.querySelectorAll(".popup-rev");
+  const openPopupButtons = document.querySelectorAll(".single-rev-open-popup");
+  const closePopupButtons = document.querySelectorAll(".popup-close-rev");
+  const playButtons = document.querySelectorAll(".play-button-rev");
+  const videos = document.querySelectorAll("video");
+
+  openPopupButtons.forEach((button, index) => {
+      button.addEventListener("click", function () {
+          popups[index].style.display = "flex";
+      });
+  });
+
+  closePopupButtons.forEach((button, index) => {
+      button.addEventListener("click", function () {
+          popups[index].style.display = "none";
+          videos[index].pause(); // Останавливаем видео при закрытии
+      });
+  });
+
+  popups.forEach((popup, index) => {
+      popup.addEventListener("click", function (event) {
+          if (event.target === popup) {
+              popup.style.display = "none";
+              videos[index].pause();
+          }
+      });
+  });
+
+  playButtons.forEach((button, index) => {
+      button.addEventListener("click", function () {
+          if (videos[index].paused) {
+              videos[index].play();
+              button.style.display = "none"; // Скрываем кнопку после запуска
+          } else {
+              videos[index].pause();
+              button.style.display = "block";
+          }
+      });
+
+      videos[index].addEventListener("play", function () {
+          playButtons[index].style.display = "none";
+      });
+
+      videos[index].addEventListener("pause", function () {
+          playButtons[index].style.display = "block";
+      });
+
+      videos[index].addEventListener("ended", function () {
+          playButtons[index].style.display = "block"; // Показываем кнопку после завершения видео
+      });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+

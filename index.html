@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="./style.css">
     <!-- Подключаем стили Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <!-- Подключаем JS Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 </head>
 <body>
     <header>
@@ -136,25 +135,25 @@
             <div class="wrapper">
                 <div class="categories-cont">
                     <div class="swiper-wrapper">
-                        <a href="" class="categories-cont-item swiper-slide">
+                        <a href="#q-1" class="categories-cont-item swiper-slide">
                             <img src="./images/categories-1.svg" alt="">
                             <p>Часы</p>
                         </a>
-                        <a href="" class="categories-cont-item swiper-slide">
+                        <a href="#q-2" class="categories-cont-item swiper-slide">
                             <img src="./images/categories-2.svg" alt="">
-                            <p>Часы</p>
+                            <p>Наушники</p>
                         </a>
-                        <a href="" class="categories-cont-item swiper-slide">
+                        <a href="#q-3" class="categories-cont-item swiper-slide">
                             <img src="./images/categories-3.svg" alt="">
-                            <p>Часы</p>
+                            <p>Dyson</p>
                         </a>
-                        <a href="" class="categories-cont-item swiper-slide">
+                        <a href="#q-4" class="categories-cont-item swiper-slide">
                             <img src="./images/categories-4.svg" alt="">
-                            <p>Часы</p>
+                            <p>Аксессуары</p>
                         </a>
-                        <a href="" class="categories-cont-item swiper-slide">
+                        <a href="#q-5" class="categories-cont-item swiper-slide">
                             <img src="./images/categories-5.svg" alt="">
-                            <p>Часы</p>
+                            <p>Зарядки</p>
                         </a>
                     </div>
                 </div>
@@ -197,7 +196,7 @@
             </div>
         </div>
         <div class="products">
-            <div class="products-item">
+            <div class="products-item" id="q-1">
                 <div class="wrapper">
                     <h2>Часы</h2>
                 </div>
@@ -371,7 +370,7 @@
                     </div>
                 </div>
             </div>
-            <div class="products-item">
+            <div class="products-item" id="q-2">
                 <div class="wrapper">
                     <h2>Наушники</h2>
                 </div>
@@ -545,9 +544,357 @@
                     </div>
                 </div>
             </div>
-            <div class="products-item">
+            <div class="products-item" id="q-3">
                 <div class="wrapper">
                     <h2>Dyson</h2>
+                </div>
+                <div class="wrapper2">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-buttons">
+                        <div class="prev-2">
+                            <img src="./images/prev.svg" alt="">
+                        </div>
+                        <div class="next-2">
+                            <img src="./images/next.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products-item" id="q-4">
+                <div class="wrapper">
+                    <h2>Аксессуары</h2>
+                </div>
+                <div class="wrapper2">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div>
+                                    <img src="./images/product.png" alt="">
+                                </div>
+                                <p class="product-name">Watch S7</p>
+                                <div class="prouct-price">
+                                    <p>3 990 р.</p>
+                                    <p>4 990 р.</p>
+                                </div>
+                                <div class="color-picker">
+                                    <span>Цвет</span>
+                                    <div class="color-options">
+                                        <label>
+                                            <input type="radio" name="color" value="lightgray" checked>
+                                            <div class="color-option lightgray"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="black">
+                                            <div class="color-option black"></div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="color" value="beige">
+                                            <div class="color-option beige"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart">
+                                    <a href="">Подробнее</a>
+                                    <button class="open-cart">Заказ в 1 клик</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-buttons">
+                        <div class="prev-2">
+                            <img src="./images/prev.svg" alt="">
+                        </div>
+                        <div class="next-2">
+                            <img src="./images/next.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products-item" id="q-5">
+                <div class="wrapper">
+                    <h2>Зарядки</h2>
                 </div>
                 <div class="wrapper2">
                     <div class="swiper-container">
@@ -846,14 +1193,41 @@
                     <div class="slider-wrapper">
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./images/bottom-slider.png" alt=""></div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="./images/bottom-slider.png" data-fancybox="gallery" data-caption="">
+                                        <img src="./images/bottom-slider.png" alt="">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="fixed-block">
@@ -1015,6 +1389,9 @@
             </div>
         </div>
     </div>
+    <!-- Подключаем JS Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="./app.js"></script>
 </body>
 </html>
